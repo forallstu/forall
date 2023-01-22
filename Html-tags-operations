@@ -1,0 +1,43 @@
+//index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center><h1> Html tag operations</h1></center>
+    <h2>Radio</h2>
+    <input type="file" name="r1"> <br>
+    <input type="radio" name="r1" id="">Male
+    <input type="radio" name="r1" id="">FeMale
+
+    <h2>Checkbox</h2>
+    <input type="checkbox">python
+    <input type="checkbox">java
+
+    <h2>Select</h2>
+    <select>
+        <option value=""></option>
+        <option value="">html</option>
+        <option value="">python</option>
+        <option value="">java</option>
+    </select>
+
+    <h2>Textarea</h2>
+    <textarea name="" id="" cols="30" rows="5" placeholder="Enter Text"></textarea>
+
+    <h2>Fieldset</h2>
+    <fieldset>
+        <legend>User Login</legend>
+        <input type="text" placeholder="Enter Name"> <br>
+        <br>
+        <input type="password" placeholder="Enter password"><br>
+        <br>
+        <button type="submit">Submit</button>
+    </fieldset>
+</body>
+</html>
