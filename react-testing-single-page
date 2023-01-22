@@ -1,0 +1,66 @@
+
+//App.js 
+
+import Main from './Main';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+      <Main/>
+    </div>
+  );
+}
+
+export default App;
+
+//Main.js
+
+import React,{useState} from 'react';
+function Main(){
+    const [name,setName]=useState('')
+    const [password,setPassword]=useState('')
+    const [error,setError]=useState(false)
+    const [submit,setSubmit]=useState(false)
+    const handlesubmit =(e)=>{
+        e.preventDefault()
+        if(name.length==0){
+            setError(true)
+        }
+        else if(password.length==0){
+            setError(true)
+        }
+        else{
+            setSubmit(true)
+        }
+    }
+    const success=()=>{
+        if(submit){
+            return(
+                <div>
+                    <h1>Successfully registerd {name}</h1>
+                </div>
+            )
+        }
+    }
+    return(
+        <div>
+            <h2>{success()}</h2>
+            <form onSubmit={handlesubmit}>
+                <h1>Register</h1>
+                <div>
+                    <input type="text" placeholder='Enter Name' onChange={e=>setName(e.target.value)} />
+                </div>
+                {error&&name.length==0?
+                <label> Name Cannot be Empty </label>:""}
+                <div>
+                    <input type="text" placeholder='Enter Password' onChange={e=>setPassword(e.target.value)} />
+                </div>
+                {error&&password.length<4?
+                <label> Password must contain more than 4 character </label>:""} <br />
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    )
+}
+export default Main;
