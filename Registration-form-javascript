@@ -1,0 +1,57 @@
+index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registeration</title>
+</head>
+<script>
+    function passvalue(){
+        var name = document.getElementById("name").value
+        var address = document.getElementById("address").value
+        localStorage.setItem("name",name)
+        localStorage.setItem("address",address)
+        return;
+    }
+</script>
+<body>
+    <form action="next.html">
+        <h2>Register</h2>
+        <label for="">Name</label>
+        <input type="text" placeholder="Enter Name" id="name"> <br>
+        <label for="">addreess</label>
+        <input type="address" placeholder="Enter address" id="address"> <br>
+        <button onclick="passvalue()" >Submit</button>
+    </form>
+</body>
+</html>
+
+//next.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <form >
+        Your Name : <p id="name"></p> <br>
+        Your address : <p id="address"></p> <br>
+    </form>
+    <script>
+        document.getElementById("name").innerHTML=localStorage.getItem("name")
+        document.getElementById("address").innerHTML=localStorage.getItem("address")
+    </script>
+</body>
+</html>
